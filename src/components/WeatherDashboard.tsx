@@ -19,6 +19,7 @@ export default function WeatherDashboard() {
   const [lon, setLon] = useState(5.37);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [initialized, setInitialized] = useState(false);
 
   const load = useCallback(async (latitude: number, longitude: number) => {
     setLoading(true);
@@ -34,23 +35,45 @@ export default function WeatherDashboard() {
   }, []);
 
   useEffect(() => {
-    const saved = localStorage.getItem("theme") as Theme | null;
-    if (saved && THEMES.includes(saved)) {
-      setTheme(saved);
+    const savedTheme = localStorage.getItem("theme") as Theme | null;
+    if (savedTheme && THEMES.includes(savedTheme)) {
+      setTheme(savedTheme);
     } else {
       const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
       setTheme(prefersDark ? "dark" : "light");
     }
+    let restoredLat = lat;
+    let restoredLon = lon;
+    let restoredCity = city;
+    const savedCity = localStorage.getItem("city");
+    if (savedCity) {
+      try {
+        const parsed = JSON.parse(savedCity);
+        if (parsed.name && parsed.latitude && parsed.longitude) {
+          restoredCity = parsed.name;
+          restoredLat = parsed.latitude;
+          restoredLon = parsed.longitude;
+          setCity(restoredCity);
+          setLat(restoredLat);
+          setLon(restoredLon);
+        }
+      } catch { /* ignore */ }
+    }
+    load(restoredLat, restoredLon);
+    setInitialized(true);
   }, []);
 
   useEffect(() => {
+    if (!initialized) return;
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
-  }, [theme]);
+  }, [theme, initialized]);
 
   useEffect(() => {
+    if (!initialized) return;
+    localStorage.setItem("city", JSON.stringify({ name: city, latitude: lat, longitude: lon }));
     load(lat, lon);
-  }, [lat, lon, load]);
+  }, [lat, lon, initialized]);
 
   const handleLocation = (latitude: number, longitude: number, name: string) => {
     setLat(latitude);
@@ -69,7 +92,7 @@ export default function WeatherDashboard() {
         <ThemeToggle theme={theme} onChange={cycleTheme} />
       </div>
 
-      <SearchBar onSelect={handleLocation} />
+      <SearchBar onSelect={handleLocation} initialCity={city} />
 
       {loading && (
         <div className="py-10 text-center" style={{ color: "var(--text-dim)" }}>

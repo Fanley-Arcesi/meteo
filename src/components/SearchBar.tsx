@@ -5,10 +5,12 @@ import { searchCity, type GeoResult } from "@/lib/weather";
 
 export default function SearchBar({
   onSelect,
+  initialCity = "Marseille",
 }: {
   onSelect: (lat: number, lon: number, name: string) => void;
+  initialCity?: string;
 }) {
-  const [query, setQuery] = useState("Marseille");
+  const [query, setQuery] = useState(initialCity);
   const [results, setResults] = useState<GeoResult[]>([]);
   const [showSelect, setShowSelect] = useState(false);
   const [loading, setLoading] = useState(false);
