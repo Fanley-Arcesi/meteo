@@ -54,7 +54,7 @@ export default function ThemeToggle({
       {open && (
         <div
           ref={panelRef}
-          className="absolute right-0 top-full z-50 mt-2 flex gap-1 rounded-xl border p-1.5 shadow-lg"
+          className="absolute right-0 top-full z-50 mt-2 grid grid-cols-4 gap-1 rounded-xl border p-2 shadow-lg"
           style={{
             background: "var(--surface)",
             borderColor: "var(--border)",
@@ -63,7 +63,7 @@ export default function ThemeToggle({
           {THEMES.map((t) => (
             <button
               key={t}
-              className={`cursor-pointer rounded-lg px-3 py-2 text-lg leading-none transition-colors ${
+              className={`cursor-pointer rounded-lg px-2.5 py-2 text-lg leading-none transition-colors ${
                 t === theme ? "ring-2 ring-offset-1" : ""
               }`}
               style={{
@@ -73,7 +73,10 @@ export default function ThemeToggle({
               onClick={() => select(t)}
               title={THEME_CONFIG[t].label}
             >
-              {THEME_CONFIG[t].icon}
+              <div className="text-center">{THEME_CONFIG[t].icon}</div>
+              <div className="mt-0.5 text-[0.6rem] leading-tight opacity-70">
+                {THEME_CONFIG[t].label}
+              </div>
             </button>
           ))}
         </div>

@@ -169,6 +169,144 @@
   100% { background-position: 0% 50%; }
 }
 
+[data-theme="blue-light"] {
+  --bg: linear-gradient(135deg, #eff6ff, #dbeafe, #bfdbfe);
+  --text: #1e3a5f; --text-muted: #1d4ed8; --text-dim: #3b82f6;
+  --surface: rgba(255,255,255,.7); --surface-hover: rgba(255,255,255,.9); --border: #93c5fd;
+  --grad-start: #dbeafe; --grad-end: #eff6ff;
+  --primary: #3b82f6; --primary-hover: #2563eb;
+  --th-bg: #dbeafe; --error: #dc2626; --footer: #1d4ed8; --footer-link: #3b82f6;
+  --chart-grid: rgba(59,130,246,.12); --chart-tick: #1d4ed8; --chart-title: #1d4ed8; --chart-legend: #1d4ed8;
+  --metric-bg: rgba(59,130,246,.06); --badge-bg: rgba(59,130,246,.06);
+}
+[data-theme="blue-light"],
+[data-theme="blue-light"] body {
+  background-size: 400% 400%;
+  animation: blue-light-bg 8s ease infinite;
+}
+@keyframes blue-light-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+[data-theme="blue-dark"] {
+  --bg: linear-gradient(135deg, #0f172a, #1e293b, #1e3a5f);
+  --text: #e2e8f0; --text-muted: #93c5fd; --text-dim: #60a5fa;
+  --surface: #1e293b; --surface-hover: #334155; --border: #334155;
+  --grad-start: #1e293b; --grad-end: #0f172a;
+  --primary: #60a5fa; --primary-hover: #3b82f6;
+  --th-bg: #0f172a; --error: #f87171; --footer: #475569; --footer-link: #64748b;
+  --chart-grid: rgba(96,165,250,.15); --chart-tick: #93c5fd; --chart-title: #93c5fd; --chart-legend: #93c5fd;
+  --metric-bg: rgba(255,255,255,.05); --badge-bg: rgba(255,255,255,.05);
+}
+
+[data-theme="green-light"] {
+  --bg: linear-gradient(135deg, #f0fdf4, #dcfce7, #bbf7d0);
+  --text: #14532d; --text-muted: #16a34a; --text-dim: #22c55e;
+  --surface: rgba(255,255,255,.7); --surface-hover: rgba(255,255,255,.9); --border: #86efac;
+  --grad-start: #dcfce7; --grad-end: #f0fdf4;
+  --primary: #22c55e; --primary-hover: #16a34a;
+  --th-bg: #dcfce7; --error: #dc2626; --footer: #16a34a; --footer-link: #22c55e;
+  --chart-grid: rgba(34,197,94,.12); --chart-tick: #16a34a; --chart-title: #16a34a; --chart-legend: #16a34a;
+  --metric-bg: rgba(34,197,94,.06); --badge-bg: rgba(34,197,94,.06);
+}
+[data-theme="green-light"],
+[data-theme="green-light"] body {
+  background-size: 400% 400%;
+  animation: green-light-bg 8s ease infinite;
+}
+@keyframes green-light-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+[data-theme="green-dark"] {
+  --bg: linear-gradient(135deg, #052e16, #14532d, #166534);
+  --text: #e2e8f0; --text-muted: #86efac; --text-dim: #4ade80;
+  --surface: #1a2e1a; --surface-hover: #2d4a2d; --border: #166534;
+  --grad-start: #14532d; --grad-end: #052e16;
+  --primary: #4ade80; --primary-hover: #22c55e;
+  --th-bg: #052e16; --error: #f87171; --footer: #475569; --footer-link: #64748b;
+  --chart-grid: rgba(74,222,128,.15); --chart-tick: #86efac; --chart-title: #86efac; --chart-legend: #86efac;
+  --metric-bg: rgba(255,255,255,.05); --badge-bg: rgba(255,255,255,.05);
+}
+
+[data-theme="yellow"] {
+  --bg: linear-gradient(135deg, #fefce8, #fef9c3, #fde68a);
+  --text: #713f12; --text-muted: #a16207; --text-dim: #ca8a04;
+  --surface: rgba(255,255,255,.7); --surface-hover: rgba(255,255,255,.9); --border: #facc15;
+  --grad-start: #fef9c3; --grad-end: #fefce8;
+  --primary: #eab308; --primary-hover: #ca8a04;
+  --th-bg: #fef9c3; --error: #dc2626; --footer: #a16207; --footer-link: #ca8a04;
+  --chart-grid: rgba(234,179,8,.15); --chart-tick: #a16207; --chart-title: #a16207; --chart-legend: #a16207;
+  --metric-bg: rgba(234,179,8,.06); --badge-bg: rgba(234,179,8,.06);
+}
+[data-theme="yellow"],
+[data-theme="yellow"] body {
+  background-size: 400% 400%;
+  animation: yellow-bg 8s ease infinite;
+}
+@keyframes yellow-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+[data-theme="purple"] {
+  --bg: linear-gradient(135deg, #faf5ff, #e9d5ff, #d8b4fe);
+  --text: #3b0764; --text-muted: #7c3aed; --text-dim: #a855f7;
+  --surface: rgba(255,255,255,.7); --surface-hover: rgba(255,255,255,.9); --border: #d8b4fe;
+  --grad-start: #e9d5ff; --grad-end: #faf5ff;
+  --primary: #a855f7; --primary-hover: #7c3aed;
+  --th-bg: #e9d5ff; --error: #dc2626; --footer: #7c3aed; --footer-link: #a855f7;
+  --chart-grid: rgba(168,85,247,.12); --chart-tick: #7c3aed; --chart-title: #7c3aed; --chart-legend: #7c3aed;
+  --metric-bg: rgba(168,85,247,.06); --badge-bg: rgba(168,85,247,.06);
+}
+[data-theme="purple"],
+[data-theme="purple"] body {
+  background-size: 400% 400%;
+  animation: purple-bg 8s ease infinite;
+}
+@keyframes purple-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+[data-theme="ocean"] {
+  --bg: linear-gradient(135deg, #ecfeff, #ccfbf1, #99f6e4);
+  --text: #134e4a; --text-muted: #0d9488; --text-dim: #14b8a6;
+  --surface: rgba(255,255,255,.7); --surface-hover: rgba(255,255,255,.9); --border: #5eead4;
+  --grad-start: #ccfbf1; --grad-end: #ecfeff;
+  --primary: #14b8a6; --primary-hover: #0d9488;
+  --th-bg: #ccfbf1; --error: #dc2626; --footer: #0d9488; --footer-link: #14b8a6;
+  --chart-grid: rgba(20,184,166,.12); --chart-tick: #0d9488; --chart-title: #0d9488; --chart-legend: #0d9488;
+  --metric-bg: rgba(20,184,166,.06); --badge-bg: rgba(20,184,166,.06);
+}
+[data-theme="ocean"],
+[data-theme="ocean"] body {
+  background-size: 400% 400%;
+  animation: ocean-bg 8s ease infinite;
+}
+@keyframes ocean-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+[data-theme="monochrome"] {
+  --bg: #fafafa;
+  --text: #171717; --text-muted: #525252; --text-dim: #a3a3a3;
+  --surface: #ffffff; --surface-hover: #f5f5f5; --border: #d4d4d4;
+  --grad-start: #f5f5f5; --grad-end: #fafafa;
+  --primary: #171717; --primary-hover: #404040;
+  --th-bg: #f5f5f5; --error: #991b1b; --footer: #a3a3a3; --footer-link: #525252;
+  --chart-grid: rgba(0,0,0,.08); --chart-tick: #525252; --chart-title: #525252; --chart-legend: #525252;
+  --metric-bg: rgba(0,0,0,.03); --badge-bg: rgba(0,0,0,.03);
+}
+
 body {
   background: var(--bg);
   color: var(--text);

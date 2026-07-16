@@ -12,7 +12,11 @@ export const WMO_CODES: Record<number, string> = {
   96: "⛈ Orage avec grêle légère", 99: "⛈ Orage avec grêle forte",
 };
 
-export const THEMES = ["dark", "light", "rainbow", "pink"] as const;
+export const THEMES = [
+  "dark", "light", "rainbow", "pink",
+  "blue-light", "blue-dark", "green-light", "green-dark",
+  "yellow", "purple", "ocean", "monochrome",
+] as const;
 export type Theme = (typeof THEMES)[number];
 
 export const THEME_CONFIG: Record<Theme, { icon: string; label: string }> = {
@@ -20,4 +24,12 @@ export const THEME_CONFIG: Record<Theme, { icon: string; label: string }> = {
   light: { icon: "☀️", label: "Mode clair" },
   rainbow: { icon: "🌈", label: "Arc-en-ciel" },
   pink: { icon: "🌸", label: "Mode rose" },
+  "blue-light": { icon: "💙", label: "Bleu clair" },
+  "blue-dark": { icon: "🔵", label: "Bleu foncé" },
+  "green-light": { icon: "💚", label: "Vert clair" },
+  "green-dark": { icon: "🟢", label: "Vert foncé" },
+  yellow: { icon: "💛", label: "Jaune" },
+  purple: { icon: "💜", label: "Violet" },
+  ocean: { icon: "🌊", label: "Océan" },
+  monochrome: { icon: "⚫", label: "Monochrome" },
 };
