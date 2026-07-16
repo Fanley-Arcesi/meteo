@@ -56,7 +56,7 @@ export default function ThemeToggle({
           ref={panelRef}
           className="absolute right-0 top-full z-50 mt-2 grid w-56 grid-cols-4 gap-2 rounded-xl border p-3 shadow-2xl"
           style={{
-            background: "var(--surface)",
+            background: "var(--panel-bg)",
             borderColor: "var(--border)",
           }}
         >
