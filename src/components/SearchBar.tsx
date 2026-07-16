@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { searchCity, type GeoResult } from "@/lib/weather";
 
 export default function SearchBar({
@@ -14,6 +14,10 @@ export default function SearchBar({
   const [results, setResults] = useState<GeoResult[]>([]);
   const [showSelect, setShowSelect] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setQuery(initialCity);
+  }, [initialCity]);
 
   const handleSearch = async () => {
     if (!query.trim()) return;
