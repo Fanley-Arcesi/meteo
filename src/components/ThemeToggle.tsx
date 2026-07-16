@@ -54,7 +54,7 @@ export default function ThemeToggle({
       {open && (
         <div
           ref={panelRef}
-          className="absolute right-0 top-full z-50 mt-2 grid grid-cols-4 gap-1 rounded-xl border p-2 shadow-lg"
+          className="absolute right-0 top-full z-50 mt-2 grid w-56 grid-cols-4 gap-2 rounded-xl border p-3 shadow-2xl"
           style={{
             background: "var(--surface)",
             borderColor: "var(--border)",
@@ -63,20 +63,25 @@ export default function ThemeToggle({
           {THEMES.map((t) => (
             <button
               key={t}
-              className={`cursor-pointer rounded-lg px-2.5 py-2 text-lg leading-none transition-colors ${
-                t === theme ? "ring-2 ring-offset-1" : ""
-              }`}
+              className="flex cursor-pointer flex-col items-center gap-0.5 rounded-lg border px-1 py-2 text-sm transition-colors hover:opacity-80"
               style={{
                 background: t === theme ? "var(--metric-bg)" : "transparent",
+                borderColor: t === theme ? "var(--primary)" : "var(--border)",
                 color: "var(--text)",
               }}
               onClick={() => select(t)}
               title={THEME_CONFIG[t].label}
             >
-              <div className="text-center">{THEME_CONFIG[t].icon}</div>
-              <div className="mt-0.5 text-[0.6rem] leading-tight opacity-70">
+              <span className="text-lg">{THEME_CONFIG[t].icon}</span>
+              <span
+                className="text-center text-[0.55rem] leading-tight"
+                style={{
+                  color: t === theme ? "var(--primary)" : "var(--text-muted)",
+                  fontWeight: t === theme ? 600 : 400,
+                }}
+              >
                 {THEME_CONFIG[t].label}
-              </div>
+              </span>
             </button>
           ))}
         </div>
